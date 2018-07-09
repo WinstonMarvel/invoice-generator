@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    title Invoice
+  body
+    header
+      .grid-row.brand-bar.space-between
+        .brand-logo
+        - if(recieverLogo!==null){  
+          img(src='#{recieverLogo}', alt='Logo')
+        - } 
+        - else{
+          span #{recieverName}
+        - }  
+        .client-details.text-right
+          span Invoice No: 
+            strong #{invoiceNumber}
+          span Date:
+            strong #{invoiceDate}
+          - if(!senderPAN==null) { 
+          span PAN: 
+            strong #{senderPAN}
+          - }
+          - if(!senderPAN==null) { 
+          span GST: 
+            strong #{senderGST}
+          - }
+      .grid-row
+        .col-6
+          - if(recieverLogo!==null)
+            span.client-name #{recieverName}
+          .reciever-details
+          span #{recieverEmail}
+          span #{recieverAddress}
+          span #{recieverState}, #{recieverCountry}
+          span Phone: #{recieverContact}
+        .col-6.sender-details.text-right
+          span #{senderName}
+          span #{senderEmail}
+          span #{senderAddress}
+          span #{senderState}, #{senderCountry}
+          span Phone: #{senderContact}
+    article.mid-section
+      .grid-row.table-head.text-uppercase
+        p.col-2.date Date
+        p.col-4.description Description
+        p.col-4.matter Matter
+        p.col-2.cost.text-right Cost
+      mixin bill(date, description, matter, cost)
+        .grid-row.bill
+          p.col-2.date.v-center= date
+          p.col-4.description= description
+          p.col-4.matter= matter
+          p.col-2.cost.text-right= cost
+      each bill in bills    
+        +bill(bill.created_at, bill.description, bill.matter_name,  bill.amount)
+      .grid-row.total-amt
+        p.total
+          | Total 
+          strong Rs. #{totalExclusiveTax}
+      .grid-row.total-amt
+        p.total-tax
+          | Tax @ #{tax}% 
+          strong Rs. #{totalInclusiveTax}
+    footer
+      .grid-row.table-head
+        p.col-4.col-offset-4 Due By
+        p.col-4.text-right Total Due
+      .grid-row.final
+        .col-4.v-center
+          a.btn-pay(href='') Pay
+        p.col-4 18 May '16
+        p.col-4.due-amt Rs. 2,40,000
+  link(rel='stylesheet', href='invoice-generator.css')
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')

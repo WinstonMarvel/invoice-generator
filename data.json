@@ -1,0 +1,36 @@
+{
+    "senderEmail": "satheeshkumar037@gmail.com",
+    "senderName": "Satheesh Kumar",
+    "senderAddress": "Madiwala, Bangalore",
+    "senderCountry": "India",
+    "senderState": "Karnataka",
+    "senderContact": "+9198765678889",
+    "senderPAN": "s",
+    "senderGST": "",
+    "recieverName": "3bees Io Pvt LTD",
+    "recieverLogo": "",
+    "recieverEmail": "admin@3bees.io",
+    "recieverAddress": "Madivala, Bangalore-560068",
+    "recieverCountry": "India",
+    "recieverState": "Karnataka",
+    "recieverContact": "+918754848561",
+    "invoiceNumber": "INV00048",
+    "tax": "10",
+    "totalExclusiveTax": "100",
+    "totalInclusiveTax": "110",
+    "invoiceDate": "12-12-12",
+    "bills": [
+      {
+        "description": "Satheeshkumar prepared Doc3.rtf",
+        "matter_name": "Testing Horaa Application",
+        "created_at": "11-12-12",
+        "amount": "100"
+      },
+      {
+        "description": "Dummy description2",
+        "matter_name": "QA for Horaa Application",
+        "created_at": "11-12-12",
+        "amount": "200"
+      }
+    ]
+  }

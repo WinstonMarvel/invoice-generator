@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<title>Invoice</title>
+</head>
+<body>
+	
+	<header>
+		<div class="grid-row brand-bar space-between">
+			<div class="brand-logo">
+				<img src="logo.jpg" alt="Logo" />
+			</div>
+			<div class="client-details text-right">
+				<span>Invoice No: <strong>12345</strong></span>
+				<span>Date:<strong>04 May ‘16</strong></span>
+				<span>PAN: <strong>12345</strong></span>
+				<span>GST: <strong>12345</strong></span>
+			</div>
+		</div>
+		
+		<div class="grid-row">
+			<div class="col-6">
+				<span class="client-name">Client Name</span>
+			</div>
+			<div class="col-6 sender-details text-right">
+				<span>Your Name</span>
+				<span>Your Address</span>
+				<span>Town, City,</span>
+				<span>Postcode</span>
+			</div>
+
+		</div>
+		
+	</header>
+
+	<article class="mid-section">
+		<div class="grid-row table-head text-uppercase">
+			<p class="col-2 date">Date</p>
+			<p class="col-4 description">Description</p>
+			<p class="col-4 matter">Matter</p>
+			<p class="col-2 cost text-right">Cost</p>
+		</div>
+		<div class="grid-row bill">
+			<p class="col-2 date v-center">23-02-05</p>
+			<p class="col-4 description">Website Design</p>
+			<p class="col-4 matter">Matter</p>
+			<p class="col-2 cost text-right">Rs. 10000</p>
+		</div>
+		<div class="grid-row bill">
+			<p class="col-2 date v-center">23-02-05</p>
+			<p class="col-4 description">Website Design</p>
+			<p class="col-4 matter">Matter</p>
+			<p class="col-2 cost text-right">Rs. 10000</p>
+		</div>
+		<div class="grid-row total-amt">
+			<p class="total">Total <strong>Rs. 20000</strong></p> 
+		</div>
+		<div class="grid-row total-amt">
+			<p class="total-tax">Tax @ 5% <strong>Rs. 24000</strong></p>
+		</div>
+	</article>
+	
+	<footer>
+		<div class="grid-row table-head">
+			<p class="col-4 col-offset-4">Due By</p>
+			<p class="col-4 text-right">Total Due</p>
+		</div>
+		<div class="grid-row final">
+			<div class="col-4 v-center"><a href="" class="btn-pay">Pay</a></div>
+			<p class="col-4">18 May '16</p>
+			<p class="col-4 due-amt">Rs. 2,40,000</p>
+		</div>
+	</footer>
+
+
+</body>
+<link rel="stylesheet" href="invoice-generator.css">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+</html>

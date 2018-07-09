@@ -25,10 +25,15 @@ body {
 header {
   padding-bottom: 0.3in; }
   header .brand-bar {
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px; }
   header .brand-logo {
     max-width: 250px;
     margin-bottom: 2em; }
+  header span.logo-text {
+    font-size: 20px;
+    font-weight: bold; }
   header .client-name {
     font-size: 16px;
     padding-bottom: 12px;
@@ -53,9 +58,6 @@ article.mid-section {
     font-size: 14px; }
     article.mid-section .table-head p {
       margin-bottom: 5px; }
-    article.mid-section .table-head p:first-child, article.mid-section .table-head p:last-child {
-      padding-left: 0;
-      padding-right: 0; }
   article.mid-section .bill .description, article.mid-section .bill .matter, article.mid-section .bill .cost {
     font-weight: 700;
     font-size: 13px; }
@@ -80,9 +82,6 @@ footer {
     font-size: 14px; }
     footer .table-head p {
       margin-bottom: 5px; }
-    footer .table-head p:first-child, footer .table-head p:last-child {
-      padding-left: 0;
-      padding-right: 0; }
   footer a.btn-pay {
     display: table;
     text-decoration: none;
@@ -113,13 +112,19 @@ footer {
   display: flex; }
 
 .col-2 {
-  width: 16.66667%; }
+  width: 16.66667%;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .col-4 {
-  width: 33.33333%; }
+  width: 33.33333%;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .col-6 {
-  width: 50%; }
+  width: 50%;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .col-offset-4 {
   margin-left: 33.33333%; }

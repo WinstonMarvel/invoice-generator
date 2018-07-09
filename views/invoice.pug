@@ -5,41 +5,46 @@ html
   body
     header
       .grid-row.brand-bar.space-between
-        .brand-logo
         - if(recieverLogo!==null){  
-          img(src='#{recieverLogo}', alt='Logo')
-        - } 
+            .brand-logo
+              img(src='#{recieverLogo}', alt='Logo')
+        - }
         - else{
-          span #{recieverName}
+            span.logo-text #{recieverName}
         - }  
         .client-details.text-right
           span Invoice No: 
             strong #{invoiceNumber}
           span Date:
             strong #{invoiceDate}
-          - if(!senderPAN==null) { 
+          - if(senderPAN!=null) { 
           span PAN: 
             strong #{senderPAN}
           - }
-          - if(!senderPAN==null) { 
+          - if(senderGST!=null) { 
           span GST: 
             strong #{senderGST}
           - }
       .grid-row
         .col-6
-          - if(recieverLogo!==null)
+          - if(recieverLogo!=null)
             span.client-name #{recieverName}
           .reciever-details
-          span #{recieverEmail}
           span #{recieverAddress}
           span #{recieverState}, #{recieverCountry}
           span Phone: #{recieverContact}
+          span #{recieverEmail}
         .col-6.sender-details.text-right
           span #{senderName}
-          span #{senderEmail}
-          span #{senderAddress}
-          span #{senderState}, #{senderCountry}
+          - if(senderAddress!=null)
+              span #{senderAddress}
+          span 
+            - if(senderState!=null)
+              | #{senderState}
+            - if(senderCountry!=null)
+              |, #{senderCountry}
           span Phone: #{senderContact}
+          span #{senderEmail}
     article.mid-section
       .grid-row.table-head.text-uppercase
         p.col-2.date Date
@@ -48,7 +53,7 @@ html
         p.col-2.cost.text-right Cost
       mixin bill(date, description, matter, cost)
         .grid-row.bill
-          p.col-2.date.v-center= date
+          p.col-2.date= date
           p.col-4.description= description
           p.col-4.matter= matter
           p.col-2.cost.text-right= cost
@@ -64,12 +69,19 @@ html
           strong Rs. #{totalInclusiveTax}
     footer
       .grid-row.table-head
-        p.col-4.col-offset-4 Due By
+        p.col-4.col-offset-4 
+        - if(!dueBy==null) { 
+          | Due By
+        - }  
         p.col-4.text-right Total Due
       .grid-row.final
         .col-4.v-center
           a.btn-pay(href='') Pay
-        p.col-4 18 May '16
-        p.col-4.due-amt Rs. 2,40,000
+       
+        p.col-4 
+        - if(!dueBy==null) { 
+          |  #{dueBy}
+        - }  
+        p.col-4.due-amt Rs. #{totalInclusiveTax}
   link(rel='stylesheet', href='invoice-generator.css')
   link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')

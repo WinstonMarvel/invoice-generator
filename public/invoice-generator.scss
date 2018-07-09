@@ -22,10 +22,6 @@ html{
 	p{
 		margin-bottom: 5px;
 	}
-	p:first-child,p:last-child{
-		padding-left: 0;
-		padding-right: 0;
-	}
 }
 
 
@@ -48,10 +44,16 @@ header{
 	padding-bottom: 0.3in;
 	.brand-bar{
 		padding-bottom: 20px;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 	.brand-logo{
 		max-width: 250px;
 		margin-bottom: 2em;
+	}
+	span.logo-text{
+		font-size: 20px;
+    	font-weight: bold;
 	}
 	.client-name{
 		font-size: 16px;
@@ -156,12 +158,18 @@ footer{
 
 .col-2{
 	width: 2/12*100%;
+	padding-left: 5px;
+	padding-right: 5px;
 } 
 .col-4{
 	width: 4/12*100%;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .col-6{
 	width: 6/12*100%;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .col-offset-4{

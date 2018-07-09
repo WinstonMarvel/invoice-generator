@@ -12,7 +12,7 @@ app.set('view engine','pug');
 
 app.use(express.static('public'));
 
-app.get('/in',(req,res)=>{
+app.get('/',(req,res)=>{
 	res.render('invoice', data);
 });
 

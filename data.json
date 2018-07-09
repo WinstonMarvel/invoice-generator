@@ -5,10 +5,10 @@
     "senderCountry": "India",
     "senderState": "Karnataka",
     "senderContact": "+9198765678889",
-    "senderPAN": "s",
-    "senderGST": "",
+    "senderPAN": null,
+    "senderGST": null,
     "recieverName": "3bees Io Pvt LTD",
-    "recieverLogo": "",
+    "recieverLogo": null,
     "recieverEmail": "admin@3bees.io",
     "recieverAddress": "Madivala, Bangalore-560068",
     "recieverCountry": "India",
@@ -25,6 +25,12 @@
         "matter_name": "Testing Horaa Application",
         "created_at": "11-12-12",
         "amount": "100"
+      },
+      {
+        "description": "Dummy description2",
+        "matter_name": "QA for Horaa Application",
+        "created_at": "11-12-12",
+        "amount": "200"
       },
       {
         "description": "Dummy description2",

@@ -50,10 +50,19 @@ header{
 	.brand-logo{
 		max-width: 250px;
 		margin-bottom: 2em;
+		
 	}
 	span.logo-text{
-		font-size: 20px;
+		font-size: 25px;
     	font-weight: bold;
+    	text-transform: uppercase;
+    	margin-right: auto;
+    	margin-left: 35px;
+    	letter-spacing: 1.8px;
+	}
+	span.logo-text.no-logo{
+		font-size: 30px;
+    	margin-left: 0;
 	}
 	.client-name{
 		font-size: 16px;

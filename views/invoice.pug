@@ -5,12 +5,13 @@ html
   body
     header
       .grid-row.brand-bar.space-between
-        - if(recieverLogo!==null){  
+        - if(senderLogo!==null){  
             .brand-logo
-              img(src='#{recieverLogo}', alt='Logo')
+              img(src='' + senderLogo, alt='Logo')
+            span.logo-text Invoice  
         - }
         - else{
-            span.logo-text #{recieverName}
+            span.logo-text.no-logo Invoice
         - }  
         .client-details.text-right
           span Invoice No: 

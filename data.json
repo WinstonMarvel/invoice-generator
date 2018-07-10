@@ -8,7 +8,7 @@
     "senderPAN": null,
     "senderGST": null,
     "recieverName": "3bees Io Pvt LTD",
-    "recieverLogo": null,
+    "senderLogo": "https://s3.amazonaws.com/horaatestuploads/dummy/user/profile/e579641b-5290-4d29-b380-2ee1c1d8e1ba.JPG",
     "recieverEmail": "admin@3bees.io",
     "recieverAddress": "Madivala, Bangalore-560068",
     "recieverCountry": "India",

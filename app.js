@@ -2,10 +2,6 @@ const express = require('express');
 const app = express();
 const pug = require('pug');
 
-const dummy = {
-	text : 'hello jesus'
-};
-
 const data = require('./data.json');
 
 app.set('view engine','pug');

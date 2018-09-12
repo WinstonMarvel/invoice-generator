@@ -3,7 +3,7 @@
 
 img {
   max-width: 100%;
-  height: auto; }
+  height: 100px; }
   img.responsive-img {
     width: 100%; }
 
@@ -37,6 +37,7 @@ header {
     text-transform: uppercase;
     margin-right: auto;
     margin-left: 35px;
+    margin-top: 25px;
     letter-spacing: 1.8px; }
   header span.logo-text.no-logo {
     font-size: 30px;

@@ -38,5 +38,6 @@
         "created_at": "11-12-12",
         "amount": "200"
       }
-    ]
+    ],
+    "invoice_notes": "1. This invoice is issued on behalf of \"----\". \"-----\" Private Limited acts in the capacity of an \"----\" as per Section \"----\" of the Central \"—-\" Tax Act, 2017 & corresponding Section \"----\" of the State GST laws. 2. This invoice has been signed by the Authorized signatory of \"----\" Private Limited only limited purposes of complying as an \"----\". Have queries? Visit support."
   }

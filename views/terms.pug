@@ -4,7 +4,7 @@ html
     title Invoice
     style
       include ../public/invoice-generator.css
-  body.invoice
+  body.terms
     header
       .grid-row.brand-bar.space-between
         - if(senderLogo!==null){  
@@ -49,27 +49,8 @@ html
           span Phone: #{senderContact}
           span #{senderEmail}
     article.mid-section
-      .grid-row.table-head.text-uppercase
-        p.col-2.date Date
-        p.col-4.description Description
-        p.col-4.matter Matter
-        p.col-2.cost.text-right Cost in INR
-      mixin bill(date, description, matter, cost)
-        .grid-row.bill
-          p.col-2.date= date
-          p.col-4.description= description
-          p.col-4.matter= matter
-          p.col-2.cost.text-right= cost
-      each bill in bills    
-        +bill(bill.created_at, bill.description, bill.matter_name, bill.amount)
-      .grid-row.total-amt
-        p.total
-          | Total 
-          strong #{totalExclusiveTax}
-      .grid-row.total-amt
-        p.total-tax
-          | Tax @ #{tax}% 
-          strong #{totalInclusiveTax}
+      p
+        | #{invoice_notes}
     footer
       .grid-row.table-head
         p.col-4.col-offset-4 
@@ -79,12 +60,7 @@ html
         p.col-4.text-right Total Due
       .grid-row.final
         .col-4.v-center
-          - if(invoice_notes!==null){  
-              a.btn-pay(href='/terms') Pay  
-          - }
-          - else{
-              a.btn-pay(href='') Pay
-          - } 
+          a.btn-pay(href='') Pay
         p.col-4 
         - if(!dueBy==null) { 
           |  #{dueBy}

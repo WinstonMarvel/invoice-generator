@@ -12,4 +12,8 @@ app.get('/',(req,res)=>{
 	res.render('invoice', data);
 });
 
+app.get('/terms',(req,res)=>{
+	res.render('terms', data);
+});
+
 app.listen(3000);    

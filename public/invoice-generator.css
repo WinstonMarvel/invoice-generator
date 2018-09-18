@@ -12,11 +12,13 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 13px; }
+
+.page.invoice {
   padding: 0.5in;
   width: 8.5in;
   background: #fff;
   min-height: 11in;
-  font-size: 13px;
   margin: 1.8% auto;
   display: table;
   position: relative;
@@ -176,3 +178,7 @@ footer {
 .terms .mid-section p {
   font-size: 17px;
   line-height: 1.9; }
+
+.terms .logo-text {
+  margin: 0 auto;
+  text-align: center; }

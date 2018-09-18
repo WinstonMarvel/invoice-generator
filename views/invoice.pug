@@ -4,91 +4,101 @@ html
     title Invoice
     style
       include ../public/invoice-generator.css
-  body.invoice
-    header
-      .grid-row.brand-bar.space-between
-        - if(senderLogo!==null){  
-            .brand-logo
-              img(src='' + senderLogo, alt='Logo')
-            span.logo-text Invoice  
-        - }
-        - else{
-            .brand-logo
-              img(src='https://storage.googleapis.com/media.usabilitydynamics.com/2014/10/23c427c6-wpinvoice-extension-pdf-icon-300x300.png', alt='Logo')
-            span.logo-text Invoice
-        - }  
-        .client-details.text-right
-          span Invoice No: 
-            strong #{invoiceNumber}
-          span Date:
-            strong #{invoiceDate}
-          - if(senderPAN!=null) { 
-          span PAN: 
-            strong #{senderPAN}
-          - }
-          - if(senderGST!=null) { 
-          span GST: 
-            strong #{senderGST}
-          - }
-      .grid-row
-        .col-6
-          span.client-name #{recieverName}
-          .reciever-details
-          span #{recieverAddress},
-          span Phone: #{recieverContact}
-          span #{recieverEmail}
-        .col-6.sender-details.text-right
-          span #{senderName}
-          - if(senderAddress!=null)
-              span #{senderAddress}
-          span 
-            - if(senderState!=null)
-              | #{senderState}
-            - if(senderCountry!=null)
-              |, #{senderCountry}
-          span Phone: #{senderContact}
-          span #{senderEmail}
-    article.mid-section
-      .grid-row.table-head.text-uppercase
-        p.col-2.date Date
-        p.col-4.description Description
-        p.col-4.matter Matter
-        p.col-2.cost.text-right Cost in INR
-      mixin bill(date, description, matter, cost)
-        .grid-row.bill
-          p.col-2.date= date
-          p.col-4.description= description
-          p.col-4.matter= matter
-          p.col-2.cost.text-right= cost
-      each bill in bills    
-        +bill(bill.created_at, bill.description, bill.matter_name, bill.amount)
-      .grid-row.total-amt
-        p.total
-          | Total 
-          strong #{totalExclusiveTax}
-      .grid-row.total-amt
-        p.total-tax
-          | Tax @ #{tax}% 
-          strong #{totalInclusiveTax}
-    footer
-      .grid-row.table-head
-        p.col-4.col-offset-4 
-        - if(!dueBy==null) { 
-          | Due By
-        - }  
-        p.col-4.text-right Total Due
-      .grid-row.final
-        .col-4.v-center
-          - if(invoice_notes!==null){  
-              a.btn-pay(href='/terms') Pay  
+  body    
+    .page.invoice
+      header
+        .grid-row.brand-bar.space-between
+          - if(senderLogo!==null){  
+              .brand-logo
+                img(src='' + senderLogo, alt='Logo')
+              span.logo-text Invoice  
           - }
           - else{
-              a.btn-pay(href='') Pay
-          - } 
-        p.col-4 
-        - if(!dueBy==null) { 
-          |  #{dueBy}
-        - }  
-        p.col-4.due-amt #{totalInclusiveTax} INR
+              .brand-logo
+                img(src='https://storage.googleapis.com/media.usabilitydynamics.com/2014/10/23c427c6-wpinvoice-extension-pdf-icon-300x300.png', alt='Logo')
+              span.logo-text Invoice
+          - }  
+          .client-details.text-right
+            span Invoice No: 
+              strong #{invoiceNumber}
+            span Date:
+              strong #{invoiceDate}
+            - if(senderPAN!=null) { 
+            span PAN: 
+              strong #{senderPAN}
+            - }
+            - if(senderGST!=null) { 
+            span GST: 
+              strong #{senderGST}
+            - }
+        .grid-row
+          .col-6
+            span.client-name #{recieverName}
+            .reciever-details
+            span #{recieverAddress},
+            span Phone: #{recieverContact}
+            span #{recieverEmail}
+          .col-6.sender-details.text-right
+            span #{senderName}
+            - if(senderAddress!=null)
+                span #{senderAddress}
+            span 
+              - if(senderState!=null)
+                | #{senderState}
+              - if(senderCountry!=null)
+                |, #{senderCountry}
+            span Phone: #{senderContact}
+            span #{senderEmail}
+      article.mid-section
+        .grid-row.table-head.text-uppercase
+          p.col-2.date Date
+          p.col-4.description Description
+          p.col-4.matter Matter
+          p.col-2.cost.text-right Cost in INR
+        mixin bill(date, description, matter, cost)
+          .grid-row.bill
+            p.col-2.date= date
+            p.col-4.description= description
+            p.col-4.matter= matter
+            p.col-2.cost.text-right= cost
+        each bill in bills    
+          +bill(bill.created_at, bill.description, bill.matter_name, bill.amount)
+        .grid-row.total-amt
+          p.total
+            | Total 
+            strong #{totalExclusiveTax}
+        .grid-row.total-amt
+          p.total-tax
+            | Tax @ #{tax}% 
+            strong #{totalInclusiveTax}
+      footer
+        .grid-row.table-head
+          p.col-4.col-offset-4 
+          - if(!dueBy==null) { 
+            | Due By
+          - }  
+          p.col-4.text-right Total Due
+        .grid-row.final
+          .col-4.v-center
+            - if(invoice_notes!==null){  
+                a.btn-pay(href='/terms') Pay  
+            - }
+            - else{
+                a.btn-pay(href='') Pay
+            - } 
+          p.col-4 
+          - if(!dueBy==null) { 
+            |  #{dueBy}
+          - }  
+          p.col-4.due-amt #{totalInclusiveTax} INR
+
+    - if(invoice_notes)
+      .page.invoice.terms
+        header
+          span.logo-text Additional Notes  
+        article.mid-section
+          p
+            | #{invoice_notes}
+        footer      
   link(rel='stylesheet', href='/invoice-generator.css')
   link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')

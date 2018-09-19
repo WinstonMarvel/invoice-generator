@@ -93,12 +93,13 @@ html
           p.col-4.due-amt #{totalInclusiveTax} INR
 
     - if(invoice_notes)
-      .page.invoice.terms
-        header
-          span.logo-text Additional Notes  
-        article.mid-section
-          p
-            | #{invoice_notes}
-        footer      
+      each invoice_note in invoice_notes
+        .page.invoice.terms
+          header
+            span.logo-text Additional Notes  
+          article.mid-section
+            p
+              | #{invoice_notes}
+          footer      
   link(rel='stylesheet', href='/invoice-generator.css')
   link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')
